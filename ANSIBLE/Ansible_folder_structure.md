@@ -1,6 +1,7 @@
-Ansible Folder Structure and Overview
-Here's a comprehensive folder structure for an Ansible project:
+### Ansible Folder Structure and Overview
+Here's a comprehensive folder structure for an Ansible project: <\n>
 
+```
 ansible-project/
 ├── ansible.cfg                 # Configuration file
 ├── inventory/                  # Host definitions
@@ -35,30 +36,32 @@ ansible-project/
 │   └── dbservers.yml           # Playbook for database servers
 └── library/                    # Custom modules
 
-Key Files and Their Purpose
-Configuration Files
+```
+#### Key Files and Their Purpose
 
-ansible.cfg: The main configuration file that defines Ansible behavior, paths, plugins, etc.
+#### Configuration Files
 
-Inventory Files
+<b> ansible.cfg:<\b> The main configuration file that defines Ansible behavior, paths, plugins, etc.
 
-inventory/production.yml, inventory/staging.yml: Define hosts and groups for different environments
-group_vars/all.yml: Variables that apply to all hosts
-group_vars/webservers.yml: Variables specific to webserver hosts
-host_vars/web1.example.com.yml: Variables specific to a single host
+#### Inventory Files
 
-Roles
+<b>inventory/production.yml, inventory/staging.yml:<\b> Define hosts and groups for different environments <\n>
+<b>group_vars/all.yml: <\b> Variables that apply to all hosts <\n>
+<b>group_vars/webservers.yml:<\b> Variables specific to webserver hosts <\n>
+<b>host_vars/web1.example.com.yml: <\b> Variables specific to a single host <\n>
+
+#### Roles
 A role is a reusable collection of tasks, handlers, files, templates, and variables:
 
-defaults/main.yml: Default variables for the role (lowest precedence)
-files/: Static files to be copied to hosts
-handlers/main.yml: Handler definitions (actions triggered by notify statements)
-meta/main.yml: Role metadata including dependencies
-tasks/main.yml: The main list of tasks the role executes
-templates/: Jinja2 templates that can be customized before deployment
-vars/main.yml: Role variables (higher precedence than defaults)
+<b>defaults/main.yml: <\b> Default variables for the role (lowest precedence)<\n>
+<b>files/: <\b> Static files to be copied to hosts <\n>
+<b>handlers/main.yml:<\b> Handler definitions (actions triggered by notify statements) <\n>
+<b>meta/main.yml: <\b> Role metadata including dependencies <\n>
+<b>tasks/main.yml: <\b> The main list of tasks the role executes <\n>
+<b>templates/: Jinja2 <\b> templates that can be customized before deployment <\n>
+<b> vars/main.yml: <\b> Role variables (higher precedence than defaults) <\n>
 
-Playbooks
+#### Playbooks
 
-playbooks/site.yml: The main playbook that might include others
-playbooks/webservers.yml: Specific playbook for web server configurations
+<b> playbooks/site.yml: <\b> The main playbook that might include others <\n>
+<b> playbooks/webservers.yml: <\b> Specific playbook for web server configurations <\n>
